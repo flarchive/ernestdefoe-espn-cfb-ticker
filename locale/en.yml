@@ -1,0 +1,13 @@
+ernestdefoe-espn-cfb-ticker:
+  admin:
+    settings:
+      enabled_label: Enable Ticker
+      enabled_help: Show the FBS college football scores ticker on the forum.
+      position_label: Ticker Position
+      position_help: Display the ticker at the top or bottom of the forum page.
+      refresh_label: Refresh Interval (seconds)
+      refresh_help: How often to poll the ESPN API for updated scores. Minimum 15 seconds.
+      speed_label: Scroll Speed
+      speed_help: >
+        Controls how fast the ticker scrolls. Lower numbers = faster scroll.
+        This multiplied by the number of games gives the total animation duration in seconds.
