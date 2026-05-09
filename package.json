@@ -1,0 +1,17 @@
+{
+    "name": "@yourvendor/espn-cfb-ticker",
+    "version": "1.0.0",
+    "description": "ESPN College Football Ticker for Flarum 2",
+    "private": true,
+    "main": "js/dist/forum.js",
+    "scripts": {
+        "dev": "flarum-webpack --watch",
+        "build": "flarum-webpack",
+        "analyze": "flarum-webpack --analyze"
+    },
+    "devDependencies": {
+        "flarum-webpack-config": "^3.0.0",
+        "webpack": "^5.0.0",
+        "webpack-cli": "^4.0.0"
+    }
+}

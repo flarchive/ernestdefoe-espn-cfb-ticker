@@ -1,0 +1,26 @@
+{
+    "name": "ernestdefoe/espn-cfb-ticker",
+    "description": "ESPN College Football Sports Ticker for Flarum 2",
+    "keywords": ["flarum", "extension", "college football", "espn", "sports ticker"],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ernestdefoe\\EspnCfbTicker\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "ESPN College Football Ticker",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-football-ball",
+                "backgroundColor": "#CC0000",
+                "color": "#FFFFFF"
+            }
+        }
+    }
+}

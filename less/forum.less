@@ -1,0 +1,287 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// ESPN CFB Ticker — Forum Styles
+// Bold, high-contrast ESPN-inspired design with smooth animations.
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ── Variables ───────────────────────────────────────────────────────────────
+@ticker-height:       44px;
+@ticker-bg:           #0a0a0a;
+@ticker-border:       #CC0000;
+@ticker-brand-bg:     #CC0000;
+@ticker-text:         #f0f0f0;
+@ticker-muted:        #888888;
+@ticker-live:         #22c55e;
+@ticker-rank:         #ffdd00;
+@ticker-final:        #aaaaaa;
+@ticker-winner:       #ffffff;
+@ticker-loser:        #666666;
+@ticker-sep:          #333333;
+@ticker-font:         'Oswald', 'Impact', 'Arial Narrow', sans-serif;
+@ticker-body-font:    'Roboto Condensed', 'Arial Narrow', sans-serif;
+@ticker-z:            9999;
+
+// ── Google Fonts import (loaded once) ───────────────────────────────────────
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+// ── Position helpers ─────────────────────────────────────────────────────────
+#cfb-ticker-mount {
+    position: fixed;
+    left:     0;
+    right:    0;
+    z-index:  @ticker-z;
+
+    &.cfb-ticker--top    { top:    0; }
+    &.cfb-ticker--bottom { bottom: 0; }
+}
+
+// Push page content down when ticker is at top
+body.has-cfb-ticker-top    { padding-top:    @ticker-height !important; }
+body.has-cfb-ticker-bottom { padding-bottom: @ticker-height !important; }
+
+// ── Main ticker bar ──────────────────────────────────────────────────────────
+.cfb-ticker {
+    display:          flex;
+    align-items:      center;
+    height:           @ticker-height;
+    background:       @ticker-bg;
+    border-top:       2px solid @ticker-border;
+    border-bottom:    1px solid #1a1a1a;
+    overflow:         hidden;
+    font-family:      @ticker-font;
+    color:            @ticker-text;
+    box-shadow:       0 2px 12px rgba(0,0,0,0.6);
+    user-select:      none;
+
+    // ── Brand badge ─────────────────────────────────────────────────────────
+    &__brand {
+        flex-shrink:      0;
+        display:          flex;
+        align-items:      center;
+        gap:              6px;
+        height:           100%;
+        padding:          0 14px 0 12px;
+        background:       @ticker-brand-bg;
+        border-right:     2px solid darken(@ticker-brand-bg, 10%);
+        position:         relative;
+        z-index:          1;
+
+        // Slanted right edge
+        &::after {
+            content:      '';
+            position:     absolute;
+            right:        -10px;
+            top:          0;
+            bottom:       0;
+            width:        10px;
+            background:   @ticker-brand-bg;
+            clip-path:    polygon(0 0, 0 100%, 100% 100%);
+        }
+    }
+
+    &__brand-icon {
+        font-size:    18px;
+        line-height:  1;
+    }
+
+    &__brand-text {
+        font-size:    13px;
+        font-weight:  700;
+        letter-spacing: 2px;
+        color:        #fff;
+        text-transform: uppercase;
+    }
+
+    // ── Scrolling viewport ───────────────────────────────────────────────────
+    &__viewport {
+        flex:         1;
+        overflow:     hidden;
+        height:       100%;
+        display:      flex;
+        align-items:  center;
+        padding-left: 14px;
+    }
+
+    &__track {
+        display:      flex;
+        align-items:  center;
+        white-space:  nowrap;
+        will-change:  transform;
+        // JS drives transform: translateX(...)
+    }
+
+    // ── Individual game chip ─────────────────────────────────────────────────
+    &__game {
+        display:      inline-flex;
+        align-items:  center;
+        gap:          10px;
+        padding:      0 6px;
+        height:       @ticker-height;
+    }
+
+    &__sep {
+        color:        @ticker-sep;
+        font-size:    20px;
+        font-weight:  300;
+        padding:      0 4px;
+    }
+
+    // ── Team block ───────────────────────────────────────────────────────────
+    &__team {
+        display:      inline-flex;
+        align-items:  center;
+        gap:          5px;
+        transition:   opacity 0.2s;
+
+        &--winner { opacity: 1; }
+        &--loser  { opacity: 0.45; }
+    }
+
+    &__rank {
+        font-size:    10px;
+        font-weight:  700;
+        color:        @ticker-rank;
+        line-height:  1;
+        min-width:    22px;
+        text-align:   right;
+    }
+
+    &__logo {
+        width:        22px;
+        height:       22px;
+        object-fit:   contain;
+        border-radius: 2px;
+        flex-shrink:  0;
+    }
+
+    &__abbr {
+        font-size:    13px;
+        font-weight:  700;
+        letter-spacing: 0.5px;
+        color:        @ticker-text;
+        text-transform: uppercase;
+    }
+
+    // ── Score / status block ─────────────────────────────────────────────────
+    &__score-block {
+        display:      inline-flex;
+        flex-direction: column;
+        align-items:  center;
+        justify-content: center;
+        min-width:    90px;
+        gap:          1px;
+    }
+
+    &__score {
+        display:      flex;
+        align-items:  center;
+        gap:          4px;
+        font-size:    15px;
+        font-weight:  700;
+        letter-spacing: 0.5px;
+        line-height:  1;
+    }
+
+    &__score-sep {
+        color:        @ticker-muted;
+        font-weight:  300;
+    }
+
+    &__score-num--winner {
+        color:        @ticker-winner;
+    }
+
+    &__time {
+        font-size:    11px;
+        font-weight:  600;
+        color:        @ticker-text;
+        font-family:  @ticker-body-font;
+    }
+
+    &__status {
+        font-size:    9px;
+        font-weight:  700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color:        @ticker-muted;
+        font-family:  @ticker-body-font;
+        line-height:  1;
+
+        &--final { color: @ticker-final; }
+
+        &--live {
+            display:    inline-flex;
+            align-items: center;
+            gap:         4px;
+            color:       @ticker-live;
+        }
+    }
+
+    &__live-dot {
+        display:        inline-block;
+        width:          6px;
+        height:         6px;
+        border-radius:  50%;
+        background:     @ticker-live;
+        flex-shrink:    0;
+        animation:      cfb-pulse 1.2s ease-in-out infinite;
+    }
+
+    &__tv {
+        font-size:      9px;
+        color:          #999;
+        font-family:    @ticker-body-font;
+        letter-spacing: 0.4px;
+    }
+
+    // ── Right controls ───────────────────────────────────────────────────────
+    &__controls {
+        flex-shrink:  0;
+        display:      flex;
+        align-items:  center;
+        gap:          2px;
+        padding:      0 8px;
+        border-left:  1px solid #222;
+        height:       100%;
+    }
+
+    &__btn {
+        background:   transparent;
+        border:       none;
+        color:        @ticker-muted;
+        font-size:    13px;
+        cursor:       pointer;
+        padding:      4px 6px;
+        border-radius: 4px;
+        line-height:  1;
+        transition:   color 0.15s, background 0.15s;
+
+        &:hover {
+            color:      #fff;
+            background: rgba(255,255,255,0.08);
+        }
+    }
+
+    // ── States ───────────────────────────────────────────────────────────────
+    &__loading,
+    &__error,
+    &__empty {
+        font-size:    12px;
+        color:        @ticker-muted;
+        font-family:  @ticker-body-font;
+        padding:      0 16px;
+        display:      flex;
+        align-items:  center;
+        gap:          8px;
+    }
+
+    &__error { color: #ef4444; }
+}
+
+// ── Pulse keyframe ───────────────────────────────────────────────────────────
+@keyframes cfb-pulse {
+    0%, 100% { opacity: 1; transform: scale(1);    }
+    50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+// ── Add body padding classes via JS (see index.js) ───────────────────────────
+// These are applied dynamically based on ticker position setting.

@@ -1,0 +1,13 @@
+yourvendor-espn-cfb-ticker:
+  admin:
+    settings:
+      enabled_label:      Enable Ticker
+      enabled_help:       Show the college football score ticker on your forum.
+      position_label:     Ticker Position
+      position_top:       Top of page
+      position_bottom:    Bottom of page
+      speed_label:        Scroll Speed (px/s)
+      speed_help:         How fast the ticker scrolls. Default is 40. Range 5–200.
+      refresh_label:      Refresh Interval (seconds)
+      refresh_help:       How often to fetch updated scores. Minimum 15 seconds.
+      show_logos_label:   Show Team Logos

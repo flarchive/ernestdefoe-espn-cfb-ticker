@@ -1,0 +1,13 @@
+// Admin panel styles for ESPN CFB Ticker extension
+// Minimal — Flarum's admin UI handles most styling.
+
+.ExtensionPage-settings {
+    .Form-group {
+        &[data-setting="espn_cfb_ticker.speed"],
+        &[data-setting="espn_cfb_ticker.refresh_interval"] {
+            input[type="number"] {
+                max-width: 100px;
+            }
+        }
+    }
+}
