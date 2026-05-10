@@ -1,0 +1,7 @@
+vendor/
+js/node_modules/
+js/tsconfig.tsbuildinfo
+.phpunit.result.cache
+
+# dist/ is committed and auto-built by GitHub Actions
+# Do NOT add js/dist/ here
