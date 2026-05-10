@@ -1,0 +1,36 @@
+{
+    "name": "ernestdefoe/espn-cfb-ticker",
+    "description": "A FBS college football scores ticker powered by the ESPN API for Flarum 2.",
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ernestdefoe",
+            "homepage": "https://github.com/ernestdefoe"
+        }
+    ],
+    "require": {
+        "flarum/core": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ernestdefoe\\EspnCfbTicker\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "ESPN CFB Ticker",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-football-ball",
+                "backgroundColor": "#cc0000",
+                "color": "#fff"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}
