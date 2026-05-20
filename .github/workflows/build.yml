@@ -1,0 +1,50 @@
+name: Build & Publish JS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'js/src/**'
+      - 'js/package.json'
+      - 'js/webpack.config.js'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build JS assets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: js
+        run: npm install
+
+      - name: Build production assets
+        working-directory: js
+        run: npm run build
+
+      - name: Show dist output
+        run: ls -lh js/dist/
+
+      - name: Commit and push dist files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: build JS assets [skip ci]"
+          file_pattern: "js/dist/**"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
