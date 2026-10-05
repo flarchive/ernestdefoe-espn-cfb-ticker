@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "name": "@ernestdefoe/espn-cfb-ticker",
+    "version": "2.0.0",
+    "description": "FBS college football score ticker for Flarum 2",
+    "scripts": {
+        "dev": "webpack --mode development --watch",
+        "build": "webpack --mode production"
+    },
+    "devDependencies": {
+        "flarum-webpack-config": "^3.0.0",
+        "webpack": "^5.0.0",
+        "webpack-cli": "^5.0.0",
+        "flarum-tsconfig": "^1.0.2",
+        "typescript": "^5.0.0"
+    }
+}
