@@ -1,0 +1,10 @@
+vendor/
+js/node_modules/
+js/tsconfig.tsbuildinfo
+.phpunit.result.cache
+
+# js/dist is committed: run `npm run build` in js/ and commit it. CI fails
+# on a stale bundle. Do NOT add js/dist/ here
+composer.lock
+/tests/integration/tmp
+/js/coverage-ts
