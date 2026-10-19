@@ -1,0 +1,25 @@
+ernestdefoe-espn-cfb-ticker:
+  admin:
+    settings:
+      enabled_label: Enable CFB Scores Ticker
+      enabled_help: Show a live FBS college football scores ticker in the forum header.
+      position_label: Ticker Position
+      position_help: Where the ticker appears on the page.
+      position_top: Top of page
+      position_bottom: Bottom of page
+      refresh_label: "Refresh Interval (seconds)"
+      refresh_help: "How often to poll ESPN for updated scores. Minimum 15 seconds."
+      speed_label: Scroll Speed
+      speed_help: "Ticker scroll speed — lower values scroll faster."
+      avocado_label: Avocado Theme Compatibility
+      avocado_help: "Enable if using the Avocado theme. Ensures the ticker is positioned correctly below the fixed header."
+
+  forum:
+    ticker:
+      label: CFB
+      load_error: Could not load scores.
+      no_games: No FBS games scheduled today.
+    status:
+      upcoming: Upcoming
+      live: LIVE
+      final: Final
