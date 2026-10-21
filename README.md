@@ -2,24 +2,13 @@
 
 > **Read-only archive of released versions of ernestdefoe/espn-cfb-ticker.** Not for installation: use [Packagist](https://packagist.org/packages/ernestdefoe/espn-cfb-ticker) or the [upstream repository](https://github.com/ernestdefoe/espn-cfb-ticker).
 
-**14** versions archived · Latest: [`v2.0.13`](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.13) · License: `MIT` · Flarum: `^2.0`
+**0** versions archived · Latest: [`v2.0.14`](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.14) · License: `MIT` · Flarum: `^2.0`
 
 ## Archived Versions
 
 | Version | Released | Flarum | Source |
 |---|---|---|---|
-| `2.0` | 2026-05-09 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0) |
-| `2.0.1` | 2026-05-09 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.1) |
-| `2.0.2` | 2026-05-09 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.2) |
-| `2.0.3` | 2026-05-09 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.3) |
-| `2.0.4` | 2026-05-10 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.4) |
-| `2.0.5` | 2026-05-10 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.5) |
-| `v2.0.10` | 2026-10-05 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.10) |
-| `v2.0.11` | 2026-10-15 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.11) |
-| `v2.0.12` | 2026-10-16 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.12) |
-| `v2.0.6` | 2026-05-20 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tree/archive/v2.0.6) |
-
-[View all 14 versions](https://github.com/flarchive/ernestdefoe-espn-cfb-ticker/tags)
+| — | — | — | — |
 
 Catalog entry: [packages/ernestdefoe-espn-cfb-ticker.json](https://github.com/flarchive/archive-index/blob/main/packages/ernestdefoe-espn-cfb-ticker.json)
 
