@@ -1,0 +1,11 @@
+{
+  "extends": "flarum-tsconfig",
+  "include": ["src/**/*", "*.ts", "forum.js", "admin.js", "../vendor/flarum/core/js/dist-typings/@types/**/*.d.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "flarum/*": ["../vendor/flarum/core/js/dist-typings/*"]
+    },
+    "types": ["mithril"]
+  }
+}
